@@ -27,7 +27,7 @@ def draw_koch_snowflake(order, size=300):
     window.mainloop()
 
 
-def main():
+def task2():
     user_input = input("Введіть рівень рекурсії (0, 1, 2, ...): ")
     try:
         order = int(user_input)
@@ -40,4 +40,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    task2()
