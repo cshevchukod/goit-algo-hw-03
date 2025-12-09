@@ -3,7 +3,7 @@ from pathlib import Path
 
 
 def sort_dir(src: Path, dest: Path):
-    """Рекурсивно обходимо src і копіюємо файли в dest за розширеннями."""
+    #Рекурсивно обходимо src і копіюємо файли в dest за розширеннями.
     try:
         for item in src.iterdir():
             if item.is_dir():
@@ -26,24 +26,24 @@ def sort_dir(src: Path, dest: Path):
         print(f"Немає доступу до директорії {src}: {e}")
 
 
-def main():
+def task1():
     if len(sys.argv) < 2:
-        print("Використання: python main.py <source_dir> [dest_dir]")
+        print("Використання: python task1.py <source_dir> [dest_dir]")
         return
 
     src = Path(sys.argv[1])
     dest = Path(sys.argv[2]) if len(sys.argv) >= 3 else Path("dist")
 
     if not src.exists() or not src.is_dir():
-        print(f"Вихідна директорія {src} не існує або не є директорією.")
+        print(f"Вихідна директорія {src} не існує.")
         return
 
     dest.mkdir(parents=True, exist_ok=True)
 
     sort_dir(src, dest)
 
-    print("Готово. Файли скопійовано та розсортовано за розширеннями.")
+    print("Готово.")
 
 
 if __name__ == "__main__":
-    main()
+    task1()
